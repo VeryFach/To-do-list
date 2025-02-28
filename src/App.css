@@ -1,0 +1,71 @@
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr; /* Baris pertama untuk hero_section, baris kedua untuk app_main */
+  min-height: 200vh; /* Pastikan grid mengambil tinggi penuh viewport */
+}
+
+.hero_section {
+  background-image: url('./assets/aset2.jpg'); /* Gambar latar belakang */
+  background-size: cover; /* Menyesuaikan gambar ke ukuran container */
+  background-position: center; /* Posisi gambar di tengah */
+  height: 400px; /* Tinggi section */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Warna teks */
+  text-align: center;
+  position: relative; /* Untuk overlay */
+  margin-bottom: 20px; /* Tambahkan margin bawah untuk jarak dengan elemen berikutnya */
+}
+
+/* Overlay untuk membuat teks lebih mudah dibaca */
+.hero_section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Warna overlay (hitam transparan) */
+  z-index: 0; /* Pastikan overlay di bawah teks */
+}
+
+/* Styling untuk konten teks */
+.hero_content {
+  position: relative;
+  z-index: 1; /* Membuat teks muncul di atas overlay */
+}
+
+.hero_content h1 {
+  font-size: 2.5rem; /* Ukuran teks */
+  margin: 0;
+  padding: 0 20px; /* Padding untuk teks */
+}
+
+.sorting_options {
+  margin: 20px;
+  text-align: center;
+}
+
+.sorting_options label {
+  margin-right: 10px;
+}
+
+.sorting_options select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.app_main {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 8%;
+  margin-top: 20px; /* Tambahkan margin atas untuk jarak dengan elemen sebelumnya */
+}
+
+.task_column {
+  width: calc(33.33% - 40px); /* Kurangi margin dari lebar total */
+  margin: 20px;
+  box-sizing: border-box; /* Pastikan padding dan border tidak menambah lebar */
+}
